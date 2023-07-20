@@ -1,4 +1,4 @@
-const apiKey = '8e40eaf5b97f4eeeb391f805744a840c'; // Replace with your NewsAPI API key
+const apiKey = '59fe021ff0984e6d86513de31be73201'; // Replace with your NewsAPI API key
 const pageSize = 20;
 let currentPage = 1;
 let currentCategory = 'general';
@@ -16,6 +16,7 @@ async function fetchNews(searchTerm, category) {
     const response = await fetch(apiUrl);
     const data = await response.json();
     totalResults = data.totalResults;
+    console.log(data.articles)
     return data.articles;
   } catch (error) {
     console.log('Error fetching news:', error);
