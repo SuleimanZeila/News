@@ -16,7 +16,7 @@ async function fetchNews(searchTerm, category) {
     const response = await fetch(apiUrl);
     const data = await response.json();
     totalResults = data.totalResults;
-    console.log(data.articles)
+    // console.log(data.articles)
     return data.articles;
   } catch (error) {
     console.log('Error fetching news:', error);
@@ -93,7 +93,7 @@ document.getElementById('searchButton').addEventListener('click', async function
   const titleh1 = document.getElementById('titleh1')
   const searchTerm = document.getElementById('searchInput').value;
   const articles = await fetchNews(searchTerm, currentCategory);
-  console.log(articles)
+  // console.log(articles)
   titleh1.innerHTML = `Here are ${totalResults} News related to ${searchTerm}.`
 
 }
