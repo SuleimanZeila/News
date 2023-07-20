@@ -6,7 +6,7 @@ let totalResults = 0;
 
 // Function to fetch news articles from the NewsAPI
 async function fetchNews(searchTerm, category) {
-  let apiUrl = `https://newsapi.org/v2/everything?q=${searchTerm}&apiKey=${apiKey}&pageSize=${pageSize}&page=${currentPage}`;
+  let apiUrl = `https://newsapi.org/v2/everything?q=${searchTerm}&apiKey=${apiKey}&sortBy=publishedAt&pageSize=${pageSize}&page=${currentPage}`;
 
   if (category && category !== 'general') {
     apiUrl += `&category=${category}`;
